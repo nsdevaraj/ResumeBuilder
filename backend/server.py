@@ -31,8 +31,8 @@ api_router = APIRouter(prefix="/api")
 # LinkedIn OAuth Configuration
 LINKEDIN_CLIENT_ID = os.getenv('LINKEDIN_CLIENT_ID')
 LINKEDIN_CLIENT_SECRET = os.getenv('LINKEDIN_CLIENT_SECRET')
-FRONTEND_URL = "https://58c73fca-2907-4260-95ea-d22d46be3dd6.preview.emergentagent.com"
-BACKEND_URL = "https://58c73fca-2907-4260-95ea-d22d46be3dd6.preview.emergentagent.com"
+FRONTEND_URL = "https://cf80c52e-5751-499f-940c-f2a1ff6b2f54.preview.emergentagent.com"
+BACKEND_URL = "https://cf80c52e-5751-499f-940c-f2a1ff6b2f54.preview.emergentagent.com"
 REDIRECT_URI = f"{BACKEND_URL}/api/auth/linkedin/callback"
 
 # Define Models

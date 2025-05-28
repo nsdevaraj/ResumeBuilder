@@ -6,7 +6,7 @@ from datetime import datetime
 import uuid
 
 class LinkedInResumeBuilderTester:
-    def __init__(self, base_url="https://58c73fca-2907-4260-95ea-d22d46be3dd6.preview.emergentagent.com"):
+    def __init__(self, base_url="https://cf80c52e-5751-499f-940c-f2a1ff6b2f54.preview.emergentagent.com"):
         self.base_url = base_url
         self.api_url = f"{base_url}/api"
         self.tests_run = 0
@@ -107,7 +107,7 @@ class LinkedInResumeBuilderTester:
                 print("✅ Auth URL contains all required parameters")
                 
                 # Check if redirect URI is correctly set to the expected value
-                expected_redirect = "https://58c73fca-2907-4260-95ea-d22d46be3dd6.preview.emergentagent.com/api/auth/linkedin/callback"
+                expected_redirect = "https://cf80c52e-5751-499f-940c-f2a1ff6b2f54.preview.emergentagent.com/api/auth/linkedin/callback"
                 if expected_redirect in auth_url:
                     print(f"✅ Redirect URI is correctly set to: {expected_redirect}")
                 else:
