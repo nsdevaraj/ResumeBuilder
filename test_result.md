@@ -186,6 +186,9 @@ backend:
       - working: true
         agent: "testing"
         comment: "LinkedIn OAuth endpoint is working correctly. Returns a valid auth URL with all required parameters."
+      - working: true
+        agent: "testing"
+        comment: "Verified the LinkedIn OAuth endpoint fix. The endpoint returns a valid auth URL with the correct redirect_uri parameter set to 'https://cf80c52e-5751-499f-940c-f2a1ff6b2f54.preview.emergentagent.com/api/auth/linkedin/callback'. All required parameters (client_id, redirect_uri, scope, response_type) are present in the auth URL."
 
   - task: "Template listing endpoint"
     implemented: true
