@@ -351,7 +351,11 @@ metadata:
   run_ui: false
 
 test_plan:
-  current_focus: []
+  current_focus: 
+    - "LinkedIn Connection Flow"
+    - "API Integration"
+    - "Page Load and Basic UI Rendering"
+    - "Template Selection Interface"
   stuck_tasks: []
   test_all: false
   test_priority: "high_first"
