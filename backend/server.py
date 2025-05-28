@@ -224,6 +224,12 @@ async def get_status_checks():
     status_checks = await db.status_checks.find().to_list(1000)
     return [StatusCheck(**status_check) for status_check in status_checks]
 
+@api_router.post("/test-create-profile", status_code=201)
+async def test_create_profile(profile: LinkedInProfile):
+    """Test endpoint to create a LinkedIn profile for testing purposes"""
+    await db.linkedin_profiles.insert_one(profile.dict())
+    return {"message": "Test profile created successfully", "user_id": profile.user_id}
+
 # Include the router in the main app
 app.include_router(api_router)
 
