@@ -193,6 +193,10 @@ async def generate_resume(user_id: str, template_id: str):
     if not profile:
         raise HTTPException(status_code=404, detail="Profile not found")
     
+    # Convert MongoDB ObjectId to string to make it JSON serializable
+    if "_id" in profile:
+        profile["_id"] = str(profile["_id"])
+    
     # Create resume data
     resume_data = {
         "id": str(uuid.uuid4()),
@@ -203,7 +207,8 @@ async def generate_resume(user_id: str, template_id: str):
     }
     
     # Save resume
-    await db.resumes.insert_one(resume_data)
+    result = await db.resumes.insert_one(resume_data)
+    resume_data["_id"] = str(result.inserted_id)
     
     return {"message": "Resume generated successfully", "resume_id": resume_data["id"], "data": resume_data}
 
