@@ -232,6 +232,10 @@ async def create_status_check(input: StatusCheckCreate):
 @api_router.get("/status", response_model=List[StatusCheck])
 async def get_status_checks():
     status_checks = await db.status_checks.find().to_list(1000)
+    # Convert MongoDB ObjectId to string to make it JSON serializable
+    for status in status_checks:
+        if "_id" in status:
+            status["_id"] = str(status["_id"])
     return [StatusCheck(**status_check) for status_check in status_checks]
 
 @api_router.post("/test-create-profile", status_code=201)
