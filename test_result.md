@@ -296,17 +296,53 @@ backend:
         comment: "Environment variable usage is working correctly. Backend uses environment variables for configuration."
 
 frontend:
-  - task: "Frontend testing"
+  - task: "LinkedIn Connection Flow"
     implemented: true
     working: "NA"
     file: "/app/frontend/src/App.js"
     stuck_count: 0
     priority: "high"
-    needs_retesting: false
+    needs_retesting: true
     status_history:
       - working: "NA"
-        agent: "main"
-        comment: "Frontend implemented but not in scope for testing agent"
+        agent: "testing"
+        comment: "LinkedIn OAuth connection flow needs testing - user reports 'Failed to connect with LinkedIn' error"
+
+  - task: "Page Load and Basic UI Rendering"
+    implemented: true
+    working: "NA"
+    file: "/app/frontend/src/App.js"
+    stuck_count: 0
+    priority: "medium"
+    needs_retesting: true
+    status_history:
+      - working: "NA"
+        agent: "testing"
+        comment: "Need to verify initial page load and UI components render correctly"
+
+  - task: "Template Selection Interface"
+    implemented: true
+    working: "NA"
+    file: "/app/frontend/src/App.js"
+    stuck_count: 0
+    priority: "medium"
+    needs_retesting: true
+    status_history:
+      - working: "NA"
+        agent: "testing"
+        comment: "Need to verify template selection interface works correctly"
+
+  - task: "API Integration"
+    implemented: true
+    working: "NA"
+    file: "/app/frontend/src/App.js"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+      - working: "NA"
+        agent: "testing"
+        comment: "Need to verify frontend to backend API communication"
 
 metadata:
   created_by: "testing_agent"
