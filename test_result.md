@@ -365,3 +365,5 @@ agent_communication:
     message: "Initializing test structure for backend API testing. Will focus on testing all backend endpoints and functionality."
   - agent: "testing"
     message: "Completed testing of all backend endpoints. Found and fixed an issue with MongoDB ObjectId not being JSON serializable in the resume generation endpoint. All tests are now passing with 100% success rate."
+  - agent: "testing"
+    message: "Starting frontend testing with focus on LinkedIn OAuth connection issue. Will test the LinkedIn connection flow, API integration, page load, and template selection interface."
