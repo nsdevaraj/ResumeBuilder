@@ -315,18 +315,9 @@ metadata:
   run_ui: false
 
 test_plan:
-  current_focus:
-    - "API health check and basic connectivity"
-    - "LinkedIn OAuth endpoint functionality"
-    - "Template listing endpoint"
-    - "Profile data retrieval endpoint"
-    - "Resume generation endpoint"
-    - "Database connectivity and operations"
-    - "CORS configuration"
-    - "Environment variable usage"
-    - "Error handling for missing data"
+  current_focus: []
   stuck_tasks: []
-  test_all: true
+  test_all: false
   test_priority: "high_first"
 
 agent_communication:
