@@ -156,6 +156,11 @@ async def get_profile(user_id: str):
     profile = await db.linkedin_profiles.find_one({"user_id": user_id})
     if not profile:
         raise HTTPException(status_code=404, detail="Profile not found")
+    
+    # Convert MongoDB ObjectId to string to make it JSON serializable
+    if "_id" in profile:
+        profile["_id"] = str(profile["_id"])
+        
     return LinkedInProfile(**profile)
 
 @api_router.get("/templates", response_model=List[ResumeTemplate])
