@@ -298,15 +298,18 @@ backend:
 frontend:
   - task: "LinkedIn Connection Flow"
     implemented: true
-    working: "NA"
+    working: false
     file: "/app/frontend/src/App.js"
-    stuck_count: 0
+    stuck_count: 1
     priority: "high"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
       - working: "NA"
         agent: "testing"
         comment: "LinkedIn OAuth connection flow needs testing - user reports 'Failed to connect with LinkedIn' error"
+      - working: false
+        agent: "testing"
+        comment: "LinkedIn OAuth connection flow is not working correctly. The frontend correctly calls the backend API endpoint at ${API}/auth/linkedin, but there's an issue with the redirect URI configuration. The backend is using the same URL for both frontend and backend (FRONTEND_URL and BACKEND_URL are identical), which is causing the OAuth callback to fail. The redirect_uri in the LinkedIn OAuth request should point to the backend API endpoint, but it's likely being redirected to the frontend instead."
 
   - task: "Page Load and Basic UI Rendering"
     implemented: true
